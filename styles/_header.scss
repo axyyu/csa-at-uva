@@ -1,0 +1,40 @@
+header {
+  padding: 32px;
+  border-bottom: 1px solid $lightgrey;
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .nav-list {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin: 0 32px;
+        font-family: "Julius Sans One", sans-serif;
+        letter-spacing: 0.1rem;
+
+        font-size: $large;
+        text-transform: uppercase;
+
+        a {
+          color: $grey;
+          text-decoration: none;
+
+          padding-bottom: 8px;
+          border-bottom: 1px solid $transparent;
+
+          &:hover {
+            color: $black;
+            border-bottom-color: $black;
+          }
+        }
+      }
+    }
+  }
+}

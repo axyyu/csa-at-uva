@@ -3,16 +3,16 @@ import Head from "next/head";
 
 import MainLayout from "../layouts/MainLayout";
 
-type HomeProps = {};
+type FamiliesProps = {};
 
-const Home: FunctionComponent<HomeProps> = () => {
+const Families: FunctionComponent<FamiliesProps> = () => {
   return (
     <MainLayout>
       <Head>
-        <title>CSA@UVA</title>
+        <title>CSA Families</title>
       </Head>
     </MainLayout>
   );
 };
 
-export default Home;
+export default Families;
