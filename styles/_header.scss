@@ -16,7 +16,8 @@ header {
 
       li {
         margin: 0 32px;
-        font-family: "Julius Sans One", sans-serif;
+        font-family: $header-font;
+        font-weight: 600;
         letter-spacing: 0.1rem;
 
         font-size: $large;
@@ -26,12 +27,12 @@ header {
           color: $grey;
           text-decoration: none;
 
-          padding-bottom: 8px;
-          border-bottom: 1px solid $transparent;
+          // padding-bottom: 8px;
+          // border-bottom: 2px solid $transparent;
 
           &:hover {
             color: $black;
-            border-bottom-color: $black;
+            // border-bottom-color: $black;
           }
         }
       }
