@@ -1,43 +1,35 @@
-import { FunctionComponent } from "react";
-import Link from "next/link";
+import { FunctionComponent } from 'react';
+import Link from 'next/link';
 
 type NavbarProps = {};
 
 const Navbar: FunctionComponent<NavbarProps> = () => {
   return (
-    <header>
-      <nav className="navbar">
-        <></>
-        <ul className="nav-list">
+    <aside className='navbar'>
+      <img className='logo' src='./Official-CSA-Square-Logo.png'></img>
+      <nav>
+        <ul className='nav-list'>
           <li>
-            <Link href="/events">
-              <a>Events</a>
-            </Link>
+            <Link href='/'>Home</Link>
           </li>
           <li>
-            <Link href="/officers">
-              <a>Officers</a>
-            </Link>
+            <Link href='/events'>Events</Link>
           </li>
           <li>
-            <Link href="/families">
-              <a>Families</a>
-            </Link>
+            <Link href='/officers'>Officers</Link>
           </li>
           <li>
-            <Link href="/alumni">
-              <a>Alumni</a>
-            </Link>
+            <Link href='/families'>Families</Link>
           </li>
           <li>
-            <Link href="/gallery">
-              <a>Gallery</a>
-            </Link>
+            <Link href='/alumni'>Alumni</Link>
+          </li>
+          <li>
+            <Link href='/gallery'>Gallery</Link>
           </li>
         </ul>
-        <></>
       </nav>
-    </header>
+    </aside>
   );
 };
 

@@ -1,0 +1,32 @@
+.navbar {
+  width: 300px;
+  height: 100%;
+  background: $red;
+  padding: 16px;
+
+  .logo {
+    max-width: 100%;
+  }
+
+  nav {
+    padding: 0 48px;
+
+    .nav-list {
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin: 32px 0;
+        a {
+          font-size: 24px;
+          text-decoration: none;
+          color: $white;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
