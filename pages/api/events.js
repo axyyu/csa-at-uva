@@ -6,10 +6,13 @@ export default async (req, res) => {
       'https://www.googleapis.com/calendar/v3/calendars/uvachinesestudentassociation%40gmail.com/events',
       {
         params: {
-          key: 'AIzaSyC7KoAbxjGswPeypdWIjioRPlWFO-Ae6aU',
+          singleEvents: true,
+          orderBy: 'startTime',
+          key: process.env.CALENDAR_API_KEY,
         },
       }
     );
+
     res.statusCode = 200;
     res.json(events.data);
   } catch (err) {

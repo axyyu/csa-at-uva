@@ -16,7 +16,7 @@ const TimelineEvent = (props) => {
       </div>
       <div className='timeline-event-content'>
         <h3>{props.name}</h3>
-        <p className='timeline-event-date'>{start.format('MMMM Do')}</p>
+        <p className='timeline-event-date'>{start.format('MMMM Do, YYYY')}</p>
         <p className='timeline-event-time'>
           {start.format('h:mm a')} - {end.format('h:mm a')}
         </p>

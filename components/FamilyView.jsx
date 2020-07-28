@@ -1,16 +1,11 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
-FamilyView.propTypes = {
-  families: PropTypes.array,
-};
-
 class FamilyView extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      viewed: false,
       current: null,
     };
   }
@@ -20,7 +15,7 @@ class FamilyView extends Component {
   }
 
   render() {
-    const families = this.props.families.map((obj) => {
+    const familyButtons = this.props.families.map((obj) => {
       return (
         <div key={obj.name} className='family-icon'>
           <div className='animal'>
@@ -33,7 +28,7 @@ class FamilyView extends Component {
       );
     });
 
-    const families2 = this.props.families.map((obj) => {
+    const familyPanels = this.props.families.map((obj) => {
       return (
         <div key={obj.name} className='family-container'>
           <div className='family-info'>
@@ -52,11 +47,15 @@ class FamilyView extends Component {
     });
     return (
       <div className='family-view'>
-        <div className='family-icons'>{families}</div>
-        <div className='family-list'>{families2}</div>
+        <div className='family-buttons'>{familyButtons}</div>
+        <div className='family-gallery'>{familyPanels}</div>
       </div>
     );
   }
 }
+
+FamilyView.propTypes = {
+  families: PropTypes.array,
+};
 
 export default FamilyView;
