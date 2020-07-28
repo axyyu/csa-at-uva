@@ -1,5 +1,9 @@
 .content {
   padding: 64px;
+  height: calc(100vh);
+  box-sizing: border-box;
+
+  overflow: auto;
 
   h1 {
     font-size: 3rem;
