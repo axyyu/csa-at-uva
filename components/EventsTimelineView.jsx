@@ -1,7 +1,29 @@
-import { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import moment from 'moment';
+
+const TimelineEvent = (props) => {
+  console.log(props);
+  const start = moment(props.start);
+  const end = moment(props.end);
+
+  return (
+    <div className='timeline-event'>
+      <div className='timeline-bar'>
+        <div className='timeline-line'></div>
+        <div className='timeline-dot'>
+          <div className='timeline-center'></div>
+        </div>
+      </div>
+      <div className='timeline-event-content'>
+        <h3>{props.name}</h3>
+        <p className='timeline-event-date'>{start.format('MMMM Do')}</p>
+        <p className='timeline-event-time'>
+          {start.format('h:mm a')} - {end.format('h:mm a')}
+        </p>
+      </div>
+    </div>
+  );
+};
 
 TimelineEvent.propTypes = {
   start: PropTypes.string,
@@ -9,23 +31,21 @@ TimelineEvent.propTypes = {
   name: PropTypes.string,
 };
 
-class TimelineEvent extends Component {
-  render() {
-    return <div className='timeline-event'>{this.props.name}</div>;
-  }
-}
+const EventsTimelineView = ({ events }) => {
+  const timelineEvents = events.map((obj) => {
+    return (
+      <TimelineEvent
+        start={obj.start.dateTime}
+        end={obj.end.dateTime}
+        name={obj.summary}
+      ></TimelineEvent>
+    );
+  });
+  return <div className='timeline-view'>{timelineEvents}</div>;
+};
 
 EventsTimelineView.propTypes = {
   events: PropTypes.array,
 };
-
-class EventsTimelineView extends Component {
-  render() {
-    const events = this.props.events.map((obj) => {
-      return <TimelineEvent start={''} end={''} name={'test'}></TimelineEvent>;
-    });
-    return <div className='timeline-view'>{events}</div>;
-  }
-}
 
 export default EventsTimelineView;

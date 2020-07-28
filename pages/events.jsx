@@ -1,15 +1,9 @@
-import { FunctionComponent } from 'react';
-import axios from 'axios';
 import Head from 'next/head';
 
 import MainLayout from '../layouts/MainLayout';
 import EventsTimelineView from '../components/EventsTimelineView';
 
-type EventsProps = {
-  events: [];
-};
-
-const Events: FunctionComponent<EventsProps> = () => {
+const Events = (props) => {
   return (
     <MainLayout>
       <Head>
@@ -18,15 +12,18 @@ const Events: FunctionComponent<EventsProps> = () => {
       <h1 className='title'>Upcoming Events</h1>
       <p className='subtitle'>List of events wow so cool</p>
 
-      <EventsTimelineView events={[]}></EventsTimelineView>
+      <EventsTimelineView events={props.events}></EventsTimelineView>
     </MainLayout>
   );
 };
 
 export async function getServerSideProps(context) {
-  const res = await axios.get('/api/events');
+  const proto = context.req.connection.encrypted ? 'https' : 'http';
+  const baseUrl = `${proto}://${context.req.headers.host}/api/events`;
+  const res = await fetch(baseUrl);
+  const data = await res.json();
   return {
-    props: { events: res.items }, // will be passed to the page component as props
+    props: { events: data.items }, // will be passed to the page component as props
   };
 }
 
