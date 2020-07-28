@@ -35,6 +35,7 @@ const EventsTimelineView = ({ events }) => {
   const timelineEvents = events.map((obj) => {
     return (
       <TimelineEvent
+        key={obj.summary}
         start={obj.start.dateTime}
         end={obj.end.dateTime}
         name={obj.summary}
