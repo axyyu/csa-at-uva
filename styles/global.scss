@@ -1,12 +1,13 @@
 //Variables
-@import "colors";
-@import "fonts";
+@import 'colors';
+@import 'fonts';
 
 //Components
-@import "layout";
-@import "navbar";
+@import 'layout';
+@import 'navbar';
+@import 'content';
 
-@import "./components/FamilyView";
+@import './components/FamilyView';
 
 html,
 body {
@@ -19,7 +20,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: $header-font;
+  font-family: $primary-font;
 }
 
 h1,

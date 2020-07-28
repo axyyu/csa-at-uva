@@ -1,11 +1,8 @@
-import { FunctionComponent } from "react";
-import Head from "next/head";
+import Head from 'next/head';
 
-import Navbar from "./Navbar";
+import Navbar from './Navbar';
 
-type MainLayoutProps = {};
-
-const MainLayout: FunctionComponent<MainLayoutProps> = ({ children }) => {
+const MainLayout = ({ children }) => {
   return (
     <>
       <Head>

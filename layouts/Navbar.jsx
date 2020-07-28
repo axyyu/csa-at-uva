@@ -1,9 +1,6 @@
-import { FunctionComponent } from 'react';
 import Link from 'next/link';
 
-type NavbarProps = {};
-
-const Navbar: FunctionComponent<NavbarProps> = () => {
+const Navbar = () => {
   return (
     <aside className='navbar'>
       <img className='logo' src='./Official-CSA-Square-Logo.png'></img>
