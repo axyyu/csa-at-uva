@@ -3,4 +3,9 @@
 
   display: grid;
   grid-template-columns: auto 1fr;
+
+  .desc {
+    font-size: 1.2rem;
+    margin: 32px 0;
+  }
 }
