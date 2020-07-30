@@ -10,17 +10,16 @@ class FamilyView extends Component {
     };
   }
 
-  animateSelect() {
-    this.setState({ viewed: true });
+  animateSelect(name) {
+    this.setState({ current: name });
   }
 
   render() {
     const familyButtons = this.props.families.map((obj) => {
       return (
-        <div key={obj.name} className='family-icon'>
+        <div key={obj.name} className='family-button'>
           <div className='animal'>
             <img className='animal-img' src={obj.animalImg}></img>
-            <img className='animal-icon' src={obj.animalIcon}></img>
           </div>
 
           <h4>{obj.name}</h4>

@@ -1,16 +1,15 @@
 .officers-view {
   .officers-container {
-    margin: 32px 0;
+    margin-top: 32px;
     .officers-list {
       display: flex;
       flex-wrap: wrap;
-      max-width: 1100px;
-      margin: 0 -32px;
+      margin: 0 -24px;
 
       .officer-container {
         // padding: 32px;
         border-radius: 16px;
-        margin: 32px;
+        margin: 24px;
 
         .img-frame {
           // border: 5px solid $darkgrey;

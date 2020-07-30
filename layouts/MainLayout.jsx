@@ -14,7 +14,9 @@ const MainLayout = ({ children }) => {
       </Head>
       <div className='layout'>
         <Navbar></Navbar>
-        <div className='content'>{children}</div>
+        <div className='content-wrapper'>
+          <div className='content'>{children}</div>
+        </div>
       </div>
     </>
   );
