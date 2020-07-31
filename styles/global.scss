@@ -1,16 +1,18 @@
 //Variables
-@import 'colors';
-@import 'fonts';
+@import "colors";
+@import "fonts";
 
 //Components
-@import 'layout';
-@import 'navbar';
-@import 'content';
+@import "layout";
+@import "navbar";
+@import "content";
 
-@import './components/FamilyView';
-@import './components/EventTimelineView';
-@import './components/OfficersView';
-@import './components/GalleryView';
+@import "./components/FamilyView";
+@import "./components/EventTimelineView";
+@import "./components/OfficersView";
+@import "./components/GalleryView";
+@import "./components/AlumniView";
+@import "./components/HomeView";
 
 html,
 body {

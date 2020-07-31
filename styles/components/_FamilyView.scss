@@ -66,12 +66,13 @@
       align-items: center;
       width: 48px;
       height: 64px;
-      background: rgba($grey, 0.9);
+      background: rgba($lightgrey, 0.5);
       transform: translate(0, -50%);
       user-select: none;
 
       &:hover {
         cursor: pointer;
+        background: rgba($lightgrey, 0.9);
       }
     }
 

@@ -1,0 +1,21 @@
+.home-img-container {
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.home-view {
+  .highlight {
+    color: $red;
+  }
+  h2 {
+  }
+
+  .mission-statement {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 2ch;
+  }
+}
