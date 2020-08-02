@@ -1,7 +1,7 @@
-import Head from 'next/head';
+import Head from "next/head";
 
-import MainLayout from '../layouts/MainLayout';
-import EventsTimelineView from '../components/EventsTimelineView';
+import MainLayout from "../layouts/MainLayout";
+import EventsTimelineView from "../components/EventsTimelineView";
 
 const Events = (props) => {
   return (
@@ -9,8 +9,8 @@ const Events = (props) => {
       <Head>
         <title>CSA Events</title>
       </Head>
-      <h1 className='title'>Upcoming Events</h1>
-      <p className='subtitle'>List of events wow so cool</p>
+      <h1 className="title">Upcoming Events</h1>
+      <p className="subtitle">List of events wow so cool</p>
 
       <EventsTimelineView events={props.events}></EventsTimelineView>
     </MainLayout>
@@ -18,13 +18,16 @@ const Events = (props) => {
 };
 
 export async function getServerSideProps(context) {
-  const proto = context.req.connection.encrypted ? 'https' : 'http';
+  const proto = context.req.connection.encrypted ? "https" : "http";
   const baseUrl = `${proto}://${context.req.headers.host}/api/events`;
   const res = await fetch(baseUrl);
   let data = null;
   try {
     data = await res.json();
     data = data.items;
+    if (data == null) {
+      data = [];
+    }
   } catch (err) {
     data = [];
   }
