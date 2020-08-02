@@ -1,0 +1,60 @@
+.navbar {
+  position: sticky;
+  width: 300px;
+  height: calc(100% - 32px);
+  background: $red;
+  padding: 16px;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  .logo {
+    max-width: 100%;
+  }
+
+  nav {
+    padding: 0 48px;
+
+    .nav-list {
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin: 32px 0;
+        a {
+          display: inline-block;
+          width: 100%;
+          font-size: 24px;
+          text-decoration: none;
+          color: $white;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  .social-container {
+    padding: 0 48px;
+    padding-bottom: 48px;
+
+    .social-links {
+      display: flex;
+      justify-content: space-between;
+
+      svg {
+        // margin-right: 32px;
+        font-size: 1.5rem;
+        color: white;
+        transition: all 0.1s ease;
+
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+          text-shadow: 2px 2px 16px $xlightgrey;
+        }
+      }
+    }
+  }
+}

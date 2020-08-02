@@ -1,14 +1,17 @@
-import { FunctionComponent } from "react";
 import Link from "next/link";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
-type NavbarProps = {};
-
-const Navbar: FunctionComponent<NavbarProps> = () => {
+const Navbar = () => {
   return (
-    <header>
-      <nav className="navbar">
-        <></>
+    <aside className="navbar">
+      <img className="logo" src="./Official-CSA-Square-Logo.png"></img>
+      <nav>
         <ul className="nav-list">
+          <li>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </li>
           <li>
             <Link href="/events">
               <a>Events</a>
@@ -35,9 +38,15 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
             </Link>
           </li>
         </ul>
-        <></>
       </nav>
-    </header>
+      <div className="social-container">
+        <div className="social-links">
+          <FaFacebook />
+          <FaInstagram />
+          <FaYoutube />
+        </div>
+      </div>
+    </aside>
   );
 };
 

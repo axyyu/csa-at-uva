@@ -4,9 +4,17 @@
 
 //Components
 @import "layout";
-@import "header";
+@import "navbar";
+@import "content";
+@import "button";
 
 @import "./components/FamilyView";
+@import "./components/EventTimelineView";
+@import "./components/OfficersView";
+@import "./components/GalleryView";
+@import "./components/AlumniView";
+@import "./components/HomeView";
+@import "./components/Newsletter";
 
 html,
 body {
@@ -19,7 +27,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: $header-font;
+  font-family: $primary-font;
 }
 
 h1,
@@ -29,4 +37,10 @@ h4,
 h5,
 p {
   margin: 0;
+  margin-bottom: 8px;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 24px;
 }

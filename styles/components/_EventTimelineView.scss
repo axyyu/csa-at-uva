@@ -1,0 +1,53 @@
+.timeline-view {
+  padding: 32px 0;
+  .timeline-event {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    grid-column-gap: 32px;
+
+    .timeline-bar {
+      position: relative;
+
+      .timeline-dot {
+        position: absolute;
+        transform: translate(-50%);
+        left: 50%;
+        top: 16px;
+
+        width: 32px;
+        height: 32px;
+        border: 2px solid $red;
+        border-radius: 100%;
+        box-sizing: border-box;
+        background: $white;
+
+        .timeline-center {
+          position: absolute;
+          transform: translate(-50%, -50%);
+          top: 50%;
+          left: 50%;
+
+          border-radius: 100%;
+          height: 16px;
+          width: 16px;
+
+          background: $yellow;
+        }
+      }
+
+      .timeline-line {
+        position: absolute;
+        transform: translate(-50%);
+        left: 50%;
+        background: $lightgrey;
+        width: 1px;
+        height: 100%;
+      }
+    }
+
+    .timeline-event-content {
+      margin-top: 16px;
+      margin-bottom: 32px;
+    }
+  }
+}

@@ -1,16 +1,16 @@
-import { FunctionComponent } from "react";
 import Head from "next/head";
 
 import MainLayout from "../layouts/MainLayout";
+import HomeView from "../components/HomeView";
 
-type HomeProps = {};
-
-const Home: FunctionComponent<HomeProps> = () => {
+const Home = () => {
   return (
     <MainLayout>
       <Head>
         <title>CSA@UVA</title>
       </Head>
+
+      <HomeView />
     </MainLayout>
   );
 };

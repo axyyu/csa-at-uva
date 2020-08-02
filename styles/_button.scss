@@ -1,0 +1,29 @@
+button {
+  margin: 0 auto;
+  outline: none;
+  border: none;
+  display: inline-block;
+  width: fit-content;
+  padding: 16px;
+  background: $red;
+  color: $white;
+  font-size: 1rem;
+  font-family: $primary-font;
+  font-weight: 600;
+
+  transition: all 0.1s ease;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 16px $lightgrey;
+    transform: scale(1.05);
+  }
+}
+
+input {
+  outline: none;
+  border: 1px solid $lightgrey;
+  padding: 16px;
+  font-size: 1rem;
+  font-family: $primary-font;
+}

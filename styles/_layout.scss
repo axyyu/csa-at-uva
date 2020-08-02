@@ -1,29 +1,11 @@
 .layout {
+  min-height: 100vh;
+
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto 1fr;
 
-  .content {
-    padding: 32px;
-    width: calc(100% - 64px);
-    max-width: 1024px;
-
-    margin: 0 auto;
-    .title {
-      margin: 64px;
-      text-align: center;
-      letter-spacing: 0.1rem;
-      font-size: $xlarge;
-    }
-    .subtitle {
-      width: 100%;
-      max-width: 600px;
-
-      margin: 0 auto;
-      font-size: $normal;
-      text-align: center;
-      line-height: 2rem;
-
-      margin-bottom: 64px;
-    }
+  .desc {
+    font-size: 1.2rem;
+    margin: 32px 0;
   }
 }

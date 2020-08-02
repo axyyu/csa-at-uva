@@ -1,0 +1,37 @@
+.officers-view {
+  h2 {
+    font-size: 2rem;
+  }
+  .officers-container {
+    margin-top: 32px;
+    .officers-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -24px;
+
+      .officer-container {
+        // padding: 32px;
+        border-radius: 16px;
+        margin: 24px;
+
+        .img-frame {
+          // border: 5px solid $darkgrey;
+          max-height: 200px;
+          max-width: 200px;
+          overflow: hidden;
+
+          img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+          }
+        }
+        .officer-info {
+          padding: 16px;
+          padding-bottom: 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
