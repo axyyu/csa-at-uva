@@ -3,6 +3,41 @@ import Head from "next/head";
 import MainLayout from "../layouts/MainLayout";
 import OfficersView from "../components/OfficersView";
 
+const officers = [
+  {
+    officerId: "1",
+    officerName: "Bimothy Ban",
+    officerImg:
+      "https://preview.keenthemes.com/metronic-v4/theme/assets/pages/media/profile/people19.png",
+    roleName: "Example Role",
+    exec: true,
+  },
+  {
+    officerId: "2",
+    officerName: "Bimothy Ban",
+    officerImg:
+      "https://preview.keenthemes.com/metronic-v4/theme/assets/pages/media/profile/people19.png",
+    roleName: "Exec role",
+    exec: false,
+  },
+  {
+    officerId: "3",
+    officerName: "Bimothy Ban",
+    officerImg:
+      "https://preview.keenthemes.com/metronic-v4/theme/assets/pages/media/profile/people19.png",
+    roleName: "Historian",
+    exec: false,
+  },
+  {
+    officerId: "4",
+    officerName: "Bimothy Ban",
+    officerImg:
+      "https://preview.keenthemes.com/metronic-v4/theme/assets/pages/media/profile/people19.png",
+    roleName: "Culture",
+    exec: false,
+  },
+];
+
 const Officers = (props) => {
   return (
     <MainLayout>
@@ -11,24 +46,9 @@ const Officers = (props) => {
       </Head>
       <h1 className="title">Our Officers</h1>
       <p className="subtitle">List of Officers wow so cool</p>
-      <OfficersView officers={props.officers}></OfficersView>
+      <OfficersView officers={officers}></OfficersView>
     </MainLayout>
   );
 };
-
-export async function getStaticProps(context) {
-  const proto = context.req.connection.encrypted ? "https" : "http";
-  const baseUrl = `${proto}://${context.req.headers.host}/api/officers`;
-  const res = await fetch(baseUrl);
-  let data = null;
-  try {
-    data = await res.json();
-  } catch (err) {
-    data = [];
-  }
-  return {
-    props: { officers: data }, // will be passed to the page component as props
-  };
-}
 
 export default Officers;
