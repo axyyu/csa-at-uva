@@ -15,8 +15,9 @@
 
     &:hover {
       cursor: pointer;
+      box-shadow: 2px 2px 16px $lightgrey;
       img {
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
     }
   }

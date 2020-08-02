@@ -32,10 +32,15 @@
         margin: 0;
       }
 
+      transition: all 0.1s ease;
+
       &:hover {
+        z-index: 1000;
+        position: relative;
+        transform: scale(1.05);
         cursor: pointer;
         background: $lightgrey;
-        box-shadow: 0 0 8px $xlightgrey;
+        box-shadow: 2px 2px 16px $lightgrey;
       }
     }
   }
