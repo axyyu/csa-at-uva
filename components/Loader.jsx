@@ -1,7 +1,10 @@
-import PropTypes from 'prop-types';
-
 const Loader = (props) => {
-  return <div className='loader'></div>;
+  return (
+    <div className='spinner'>
+      <div className='dot1'></div>
+      <div className='dot2'></div>
+    </div>
+  );
 };
 
 export default Loader;

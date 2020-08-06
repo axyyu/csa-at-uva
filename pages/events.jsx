@@ -10,7 +10,10 @@ const Events = (props) => {
         <title>CSA Events</title>
       </Head>
       <h1 className='title'>Upcoming Events</h1>
-      <p className='subtitle'>List of events wow so cool</p>
+      <p className='subtitle'>
+        Save the date! Below is a list of upcoming meetings, performances, and
+        activities.
+      </p>
 
       <EventsTimelineView></EventsTimelineView>
     </MainLayout>

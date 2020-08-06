@@ -35,16 +35,14 @@ TimelineEvent.propTypes = {
 };
 
 const EventsTimelineView = () => {
-  const { data, error } = useSWR(
-    'https://csa-at-uva-cms.uk.r.appspot.com/api/events',
-    fetch
+  let { data, error } = useSWR(
+    'https://csa-at-uva-cms.uk.r.appspot.com/api/events'
   );
-  console.log(error);
 
   if (error) return <div>Failed to retrieve events</div>;
   if (!data) return <Loader />;
 
-  const timelineEvents = data.map((obj) => {
+  const timelineEvents = data.items.map((obj) => {
     return (
       <TimelineEvent
         key={obj.summary}
@@ -55,10 +53,6 @@ const EventsTimelineView = () => {
     );
   });
   return <div className='timeline-view'>{timelineEvents}</div>;
-};
-
-EventsTimelineView.propTypes = {
-  events: PropTypes.array,
 };
 
 export default EventsTimelineView;
