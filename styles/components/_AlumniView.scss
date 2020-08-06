@@ -28,13 +28,14 @@
         .year {
           display: grid;
           place-items: center;
-          background-color: $lightgrey;
+          background-color: $orange;
+          color: $white;
 
           padding: 16px 32px;
 
           h2 {
             font-size: 2rem;
-            font-weight: 800;
+            font-weight: 500;
           }
         }
 
@@ -48,9 +49,14 @@
 
           padding: 32px;
 
+          transition: all 0.1s ease;
+
           &:hover {
+            z-index: 1000;
+            transform: scale(1.05);
             cursor: pointer;
-            background: darken($xlightgrey, 5%);
+            background: $lightgrey;
+            box-shadow: 2px 2px 16px $lightgrey;
           }
         }
       }

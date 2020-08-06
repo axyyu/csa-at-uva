@@ -24,7 +24,7 @@ export async function getStaticProps(context) {
   const pastYears = await res.json();
 
   return {
-    props: { pastYears }, // will be passed to the page component as props
+    props: { pastYears },
   };
 }
 

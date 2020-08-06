@@ -3,41 +3,31 @@ import Head from 'next/head';
 import MainLayout from '../layouts/MainLayout';
 import FamilyView from '../components/views/FamilyView';
 
-const families = [
-  {
-    name: 'Sleepy Sloths',
-    animalIcon: 'families/slothIcon.png',
-    animalImg: 'families/slothImg.png',
-    image: 'families/group-photo.png',
-    desc: 'Sloths are sleepy',
-  },
-  {
-    name: 'Cheeky Chipmunks',
-    animalIcon: 'families/chipmunkIcon.png',
-    animalImg: 'families/chipmunkImg.png',
-    image: 'families/group-photo.png',
-    desc: 'Chipmunks are cheeky',
-  },
-  {
-    name: 'Pouncing Penguins',
-    animalIcon: 'families/penguinIcon.png',
-    animalImg: 'families/penguinImg.png',
-    image: 'families/group-photo.png',
-    desc: 'Penguins are pouncing',
-  },
-];
-
-const Families = () => {
+const Families = (props) => {
   return (
     <MainLayout>
       <Head>
         <title>CSA Families</title>
       </Head>
       <h1 className='title'>Meet Our Families</h1>
-      <p className='subtitle'>Wow so cool</p>
-      <FamilyView families={families}></FamilyView>
+      <p className='subtitle'>
+        Every year, all CSA members are assigned to different families. Families
+        play a major role in the social activites in CSA.
+      </p>
+      <FamilyView families={props.families}></FamilyView>
     </MainLayout>
   );
 };
+
+export async function getStaticProps(context) {
+  const res = await fetch(
+    'https://csa-at-uva-cms.uk.r.appspot.com/api/families'
+  );
+  const families = await res.json();
+
+  return {
+    props: { families },
+  };
+}
 
 export default Families;
