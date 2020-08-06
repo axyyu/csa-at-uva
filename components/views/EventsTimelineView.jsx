@@ -2,6 +2,8 @@ import useSWR from 'swr';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
+import Loader from '../Loader';
+
 const TimelineEvent = (props) => {
   console.log(props);
   const start = moment(props.start);
@@ -32,15 +34,17 @@ TimelineEvent.propTypes = {
   name: PropTypes.string,
 };
 
-const EventsTimelineView = ({ events }) => {
+const EventsTimelineView = () => {
   const { data, error } = useSWR(
-    'https://csa-at-uva-api.uk.r.appspot.com/api/events',
+    'https://csa-at-uva-cms.uk.r.appspot.com/api/events',
     fetch
   );
+  console.log(error);
 
-  if(!data) return <
+  if (error) return <div>Failed to retrieve events</div>;
+  if (!data) return <Loader />;
 
-  const timelineEvents = events.map((obj) => {
+  const timelineEvents = data.map((obj) => {
     return (
       <TimelineEvent
         key={obj.summary}

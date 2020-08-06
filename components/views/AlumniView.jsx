@@ -6,7 +6,7 @@ const AlumniView = (props) => {
     .sort((a, b) => b.endYear - a.endYear)
     .map((obj) => {
       return (
-        <div className='past-year-container'>
+        <div className='past-year-container' key={obj.endYear}>
           <div className='chinafest'>
             <img src={obj.chinafestImg} alt='Chinafest Image'></img>
           </div>

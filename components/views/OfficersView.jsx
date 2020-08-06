@@ -1,53 +1,86 @@
 import PropTypes from 'prop-types';
 
+import Carousel from '../Carousel';
+
 const OfficerView = (props) => {
   return (
-    <div className='officer-container'>
-      <div className='img-frame'>
-        <img alt='Officer Img' src={props.officerImg}></img>
+    <div key={props.name} className='officer-container'>
+      <div className='officer-img-container'>
+        <img className='officer-img' src={props.image}></img>
       </div>
-      <div className='officer-info'>
-        <h3>{props.officerName}</h3>
-        <p>{props.roleName}</p>
+      <div className='officer-info-container'>
+        <div className='officer-info'>
+          <h2 className='role'>{props.role}</h2>
+          <h2 className='names'>{props.name}</h2>
+          <p>{props.desc}</p>
+        </div>
       </div>
     </div>
   );
 };
 
-OfficerView.propTypes = {
-  officerId: PropTypes.string,
-  officerName: PropTypes.string,
-  officerImg: PropTypes.string,
-  roleName: PropTypes.string,
-  exec: PropTypes.bool,
+const ExecView = (props) => {
+  const president = props.officers.filter((obj) => obj.role === 'President')[0];
+  const vicePres = props.officers.filter(
+    (obj) => obj.role === 'Vice President'
+  )[0];
+  const secretary = props.officers.filter((obj) => obj.role === 'Secretary')[0];
+  const treasurer = props.officers.filter((obj) => obj.role === 'Treasurer')[0];
+  return (
+    <div key={props.name} className='officer-container'>
+      <div className='exec-officer'>
+        <div className='exec-img=container'>
+          <img src={president.image}></img>
+        </div>
+        <div className='exec-info'>
+          <h2 className='role'>{president.role}</h2>
+          <h2 className='name'>{president.name}</h2>
+        </div>
+      </div>
+      <div className='exec-officer'>
+        <div className='exec-img=container'>
+          <img src={vicePres.image}></img>
+        </div>
+        <div className='exec-info'>
+          <h2 className='role'>{vicePres.role}</h2>
+          <h2 className='name'>{vicePres.name}</h2>
+        </div>
+      </div>
+      <div className='exec-officer'>
+        <div className='exec-img=container'>
+          <img src={treasurer.image}></img>
+        </div>
+        <div className='exec-info'>
+          <h2 className='role'>{treasurer.role}</h2>
+          <h2 className='name'>{treasurer.name}</h2>
+        </div>
+      </div>
+      <div className='exec-officer'>
+        <div className='exec-img=container'>
+          <img src={secretary.image}></img>
+        </div>
+        <div className='exec-info'>
+          <h2 className='role'>{secretary.role}</h2>
+          <h2 className='name'>{secretary.name}</h2>
+        </div>
+      </div>
+    </div>
+  );
 };
 
-const OfficersView = ({ officers }) => {
-  console.log(officers);
-  const execOfficers = officers
-    .filter((obj) => {
-      return obj.exec;
-    })
-    .map((obj) => {
-      return <OfficerView key={obj.officerId} {...obj}></OfficerView>;
-    });
-  const nonExecOfficers = officers
-    .filter((obj) => {
-      return !obj.exec;
-    })
-    .map((obj) => {
-      return <OfficerView key={obj.officerId} {...obj}></OfficerView>;
-    });
-
+const OfficersView = (props) => {
+  console.log(props);
+  const oboard = props.officers.filter((obj) => obj.desc);
+  const officerPanels = oboard.map((obj) => (
+    <OfficerView key={obj.role} {...obj} />
+  ));
   return (
     <div className='officers-view'>
-      <div className='exec-container officers-container'>
-        <h2>Exec Board</h2>
-        <div className='officers-list'>{execOfficers}</div>
-      </div>
-      <div className='non-exec-container officers-container'>
-        <h2>OBoard</h2>
-        <div className='officers-list'>{nonExecOfficers}</div>
+      <div className='officer-gallery-wrapper'>
+        <Carousel>
+          <ExecView officers={props.officers} />
+          {officerPanels}
+        </Carousel>
       </div>
     </div>
   );

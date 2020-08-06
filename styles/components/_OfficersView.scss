@@ -1,36 +1,73 @@
 .officers-view {
-  h2 {
-    font-size: 2rem;
+  margin: 32px 0;
+
+  .officer-gallery-wrapper {
+    position: relative;
+    overflow: hidden;
+    background: $xlightgrey;
+
+    display: block;
+    width: 100%;
   }
-  .officers-container {
-    margin-top: 32px;
-    .officers-list {
+  .officer-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
+    height: 100%;
+
+    background: $xlightgrey;
+
+    .exec-officer {
+      flex: 1;
+
+      .officer-img-container {
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .exec-info {
+        padding: 32px;
+      }
+    }
+
+    .role {
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 0.2rem;
+      font-size: 1rem;
+      color: $red;
+    }
+
+    .officer-info-container {
+      flex: 1;
       display: flex;
-      flex-wrap: wrap;
-      margin: 0 -24px;
+      flex-direction: column;
+      background: $xlightgrey;
+      text-align: left;
 
-      .officer-container {
-        // padding: 32px;
-        border-radius: 16px;
-        margin: 24px;
+      .officer-info {
+        padding: 32px;
+        min-width: 300px;
 
-        .img-frame {
-          // border: 5px solid $darkgrey;
-          max-height: 200px;
-          max-width: 200px;
-          overflow: hidden;
-
-          img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: cover;
-          }
+        .names {
+          margin-bottom: 32px;
         }
-        .officer-info {
-          padding: 16px;
-          padding-bottom: 0;
-          text-align: center;
-        }
+      }
+    }
+
+    .officer-img-container {
+      flex: 2;
+      width: 100%;
+      min-width: 300px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
   }

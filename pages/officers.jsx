@@ -10,23 +10,22 @@ const Officers = (props) => {
         <title>CSA Officers</title>
       </Head>
       <h1 className='title'>Our Officers</h1>
-      <p className='subtitle'>List of Officers wow so cool</p>
+      <p className='subtitle'>
+        Here are the officers that organize all the CSA events!
+      </p>
       <OfficersView officers={props.officers}></OfficersView>
     </MainLayout>
   );
 };
 
 export async function getStaticProps(context) {
-  const baseUrl = `/`;
-  const res = await fetch(baseUrl);
-  let data = null;
-  try {
-    data = await res.json();
-  } catch (err) {
-    data = [];
-  }
+  const res = await fetch(
+    'https://csa-at-uva-cms.uk.r.appspot.com/api/officers'
+  );
+  const officers = await res.json();
+
   return {
-    props: { officers: data }, // will be passed to the page component as props
+    props: { officers },
   };
 }
 

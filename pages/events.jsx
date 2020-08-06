@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import MainLayout from '../layouts/MainLayout';
-import EventsTimelineView from '../components/EventsTimelineView';
+import EventsTimelineView from '../components/views/EventsTimelineView';
 
 const Events = (props) => {
   return (
