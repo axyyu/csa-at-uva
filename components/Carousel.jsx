@@ -28,6 +28,9 @@ class CsaCarousel extends React.Component {
   render() {
     return (
       <Carousel
+        showArrows={
+          this.props.showArrows == null ? true : this.props.showArrows
+        }
         showStatus={false}
         infiniteLoop={true}
         autoPlay={true}

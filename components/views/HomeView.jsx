@@ -1,10 +1,17 @@
 import Link from 'next/link';
 
 import ThisWeekInCsa from '../ThisWeekInCsa';
+import Carousel from '../Carousel';
 
 const HomeView = (props) => {
+  const homeImages = props.home.images.map((obj) => (
+    <img key={obj} src={obj} alt='Home Image' />
+  ));
   return (
     <div className='home-view'>
+      <div className='home-gallery-wrapper'>
+        <Carousel showArrows={false}>{homeImages}</Carousel>
+      </div>
       <h1>
         Welcome to <span className='highlight'>CSA at UVA</span>
       </h1>
@@ -19,14 +26,17 @@ const HomeView = (props) => {
         culture.
       </p>
 
-      <ThisWeekInCsa />
+      {/* <ThisWeekInCsa /> */}
 
-      <section>
-        <h2>Join Our Newsletter</h2>
-        <p>
-          Follow our newsletter to receive event information from all of our
-          officers.
-        </p>
+      <section className='home-newsletter'>
+        <div className='newsletter-info'>
+          <h2>Join Our Newsletter</h2>
+          <p>
+            Follow our newsletter to receive notifications for events and fun
+            activities.
+          </p>
+        </div>
+
         <button onClick={() => props.openNewsletter()}>
           Join Our Newsletter
         </button>
