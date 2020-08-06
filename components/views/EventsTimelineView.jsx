@@ -1,3 +1,4 @@
+import useSWR from 'swr';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
@@ -32,12 +33,19 @@ TimelineEvent.propTypes = {
 };
 
 const EventsTimelineView = ({ events }) => {
+  const { data, error } = useSWR(
+    'https://csa-at-uva-api.uk.r.appspot.com/api/events',
+    fetch
+  );
+
+  if(!data) return <
+
   const timelineEvents = events.map((obj) => {
     return (
       <TimelineEvent
         key={obj.summary}
-        start={obj.start.dateTime}
-        end={obj.end.dateTime}
+        start={obj.start.dateTime || obj.start.date}
+        end={obj.end.dateTime || obj.end.date}
         name={obj.summary}
       ></TimelineEvent>
     );

@@ -1,39 +1,31 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-import MainLayout from "../layouts/MainLayout";
-import AlumniView from "../components/AlumniView";
+import MainLayout from '../layouts/MainLayout';
+import AlumniView from '../components/views/AlumniView';
 
-const alumni = [
-  {
-    year: 2020,
-    families: [
-      {
-        name: "Sleepy Sloths",
-        animalImg: "families/slothImg.png",
-      },
-      {
-        name: "Cheeky Chipmunks",
-        animalImg: "families/chipmunkImg.png",
-      },
-      {
-        name: "Pouncing Penguins",
-        animalImg: "families/penguinImg.png",
-      },
-    ],
-  },
-];
-
-const Alumni = () => {
+const Alumni = (props) => {
   return (
     <MainLayout>
       <Head>
         <title>CSA Alumni</title>
       </Head>
-      <h1 className="title">Past Alumni</h1>
-      <p className="subtitle">List of Alumni wow so cool</p>
-      <AlumniView pastYears={alumni}></AlumniView>
+      <h1 className='title'>Past Years</h1>
+      <p className='subtitle'>
+        Feeling nostalgic? View CSA's past years, including officers, families,
+        and more to relive those memories.
+      </p>
+      <AlumniView pastYears={props.pastYears}></AlumniView>
     </MainLayout>
   );
 };
+
+export async function getStaticProps(context) {
+  const res = await fetch('https://csa-at-uva-cms.uk.r.appspot.com/api/alumni');
+  const pastYears = await res.json();
+
+  return {
+    props: { pastYears }, // will be passed to the page component as props
+  };
+}
 
 export default Alumni;

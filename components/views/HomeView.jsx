@@ -1,22 +1,14 @@
-import Link from "next/link";
-import Newsletter from "./Newsletter";
+import Link from 'next/link';
 
-const ThisWeekInCsa = () => {
-  return (
-    <div className="this-week">
-      <div className="this-week-title">This Week in CSA</div>
-      <div className="timeline"></div>
-    </div>
-  );
-};
+import ThisWeekInCsa from '../ThisWeekInCsa';
 
 const HomeView = (props) => {
   return (
-    <div className="home-view">
+    <div className='home-view'>
       <h1>
-        Welcome to <span className="highlight">CSA at UVA</span>
+        Welcome to <span className='highlight'>CSA at UVA</span>
       </h1>
-      <p className="mission-statement">
+      <p className='mission-statement'>
         The Chinese Student Association (CSA), as one of the largest
         Asian-American cultural organizations on grounds, seeks to promote
         awareness and appreciation for traditional and modern Chinese culture
@@ -40,38 +32,38 @@ const HomeView = (props) => {
         </button>
       </section>
 
-      <div className="section-list">
-        <section className="family">
+      <div className='section-list'>
+        <section className='family'>
           <h2>Join a Family</h2>
 
           <p>Families are an integral part of CSA.</p>
 
-          <Link href="/families">
+          <Link href='/families'>
             <a>
               <button>View Families</button>
             </a>
           </Link>
         </section>
-        <section className="officers">
+        <section className='officers'>
           <h2>Talk to Our Officers</h2>
 
           <p>Our officers are very cool</p>
 
-          <Link href="/officers">
+          <Link href='/officers'>
             <a>
               <button>View Officers</button>
             </a>
           </Link>
         </section>
 
-        <section className="gallery">
+        <section className='gallery'>
           <h2>View Our Past Events</h2>
 
           <p>
             See pictures and videos of our past performances and social events!
           </p>
 
-          <Link href="/gallery">
+          <Link href='/gallery'>
             <a>
               <button>View Gallery</button>
             </a>

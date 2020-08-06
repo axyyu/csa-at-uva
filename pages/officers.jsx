@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import MainLayout from '../layouts/MainLayout';
-import OfficersView from '../components/OfficersView';
+import OfficersView from '../components/views/OfficersView';
 
 const Officers = (props) => {
   return (
@@ -16,9 +16,8 @@ const Officers = (props) => {
   );
 };
 
-export async function getServerSideProps(context) {
-  const proto = context.req.connection.encrypted ? 'https' : 'http';
-  const baseUrl = `${proto}://${context.req.headers.host}/api/officers`;
+export async function getStaticProps(context) {
+  const baseUrl = `/`;
   const res = await fetch(baseUrl);
   let data = null;
   try {

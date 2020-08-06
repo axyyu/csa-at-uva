@@ -1,7 +1,7 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-import MainLayout from "../layouts/MainLayout";
-import HomeView from "../components/HomeView";
+import MainLayout from '../layouts/MainLayout';
+import HomeView from '../components/views/HomeView';
 
 const Home = () => {
   return (

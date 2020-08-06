@@ -1,8 +1,8 @@
-import { Component, cloneElement, Children } from "react";
-import Head from "next/head";
+import { Component, cloneElement, Children } from 'react';
+import Head from 'next/head';
 
-import Navbar from "./Navbar";
-import Newsletter from "../components/Newsletter";
+import Navbar from './Navbar';
+import Newsletter from '../components/Newsletter';
 
 class MainLayout extends Component {
   constructor(props) {
@@ -26,16 +26,16 @@ class MainLayout extends Component {
     return (
       <>
         <Head>
-          <link rel="shortcut icon" href="/favicon.png" />
+          <link rel='shortcut icon' href='/favicon.png' />
           <link
-            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet"
+            href='https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap'
+            rel='stylesheet'
           ></link>
         </Head>
-        <div className="layout">
+        <div className='layout'>
           <Navbar></Navbar>
-          <div className="content-wrapper">
-            <div className="content">{elements}</div>
+          <div className='content-wrapper'>
+            <div className='content'>{elements}</div>
           </div>
         </div>
 

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import MainLayout from '../layouts/MainLayout';
-import FamilyView from '../components/FamilyView';
+import FamilyView from '../components/views/FamilyView';
 
 const families = [
   {

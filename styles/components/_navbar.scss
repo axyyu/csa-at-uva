@@ -1,7 +1,11 @@
 .navbar {
   position: sticky;
   width: 300px;
-  height: calc(100% - 32px);
+
+  max-height: 100vh;
+  box-sizing: border-box;
+  overflow: auto;
+
   background: $red;
   padding: 16px;
 
