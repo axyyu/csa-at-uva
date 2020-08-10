@@ -1,64 +1,32 @@
 import Head from 'next/head';
 
 import MainLayout from '../layouts/MainLayout';
-import GalleryView from '../components/GalleryView';
+import GalleryView from '../components/views/GalleryView';
 
-const galleries = [
-  {
-    name: 'Sleepy Sloths',
-    galleryImg:
-      'https://images.unsplash.com/photo-1518998053901-5348d3961a04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-    date: '1596151392154',
-  },
-  {
-    name: 'Sleepy Sloths',
-    galleryImg:
-      'https://images.unsplash.com/photo-1518998053901-5348d3961a04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-    date: '1596151392154',
-  },
-  {
-    name: 'Sleepy Sloths',
-    galleryImg:
-      'https://images.unsplash.com/photo-1518998053901-5348d3961a04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-    date: '1596151392154',
-  },
-  {
-    name: 'Sleepy Sloths',
-    galleryImg:
-      'https://images.unsplash.com/photo-1518998053901-5348d3961a04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-    date: '1596151392154',
-  },
-  {
-    name: 'Sleepy Sloths',
-    galleryImg:
-      'https://images.unsplash.com/photo-1518998053901-5348d3961a04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-    date: '1596151392154',
-  },
-  {
-    name: 'Sleepy Sloths',
-    galleryImg:
-      'https://images.unsplash.com/photo-1518998053901-5348d3961a04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-    date: '1596151392154',
-  },
-  {
-    name: 'Sleepy Sloths',
-    galleryImg:
-      'https://images.unsplash.com/photo-1518998053901-5348d3961a04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
-    date: '1596151392154',
-  },
-];
-
-const Gallery = () => {
+const Gallery = (props) => {
   return (
     <MainLayout>
       <Head>
         <title>CSA Gallery</title>
       </Head>
       <h1 className='title'>Gallery</h1>
-      <p className='subtitle'>Lots of pictures wow so cool</p>
-      <GalleryView galleries={galleries}></GalleryView>
+      <p className='subtitle'>
+        A collection of photo albums from past events and activities.
+      </p>
+      <GalleryView galleries={props.galleries}></GalleryView>
     </MainLayout>
   );
 };
+
+export async function getStaticProps(context) {
+  const res = await fetch(
+    'https://csa-at-uva-cms.uk.r.appspot.com/api/gallery'
+  );
+  const galleries = await res.json();
+
+  return {
+    props: { galleries },
+  };
+}
 
 export default Gallery;

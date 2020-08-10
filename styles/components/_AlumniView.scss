@@ -54,7 +54,7 @@
           &:hover {
             z-index: 1000;
             transform: scale(1.05);
-            cursor: pointer;
+            cursor: not-allowed;
             background: $lightgrey;
             box-shadow: 2px 2px 16px $lightgrey;
           }
