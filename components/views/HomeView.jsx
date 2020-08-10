@@ -26,8 +26,6 @@ const HomeView = (props) => {
         culture.
       </p>
 
-      {/* <ThisWeekInCsa /> */}
-
       <section className='home-newsletter'>
         <div className='newsletter-info'>
           <h2>Join Our Newsletter</h2>
@@ -42,9 +40,11 @@ const HomeView = (props) => {
         </button>
       </section>
 
+      <ThisWeekInCsa />
+
       <div className='section-list'>
         <section className='family'>
-          <h2>Join a Family</h2>
+          <h2>See Our Families</h2>
 
           <p>Families are an integral part of CSA.</p>
 
