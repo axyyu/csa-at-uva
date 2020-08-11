@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
-import MainLayout from '../layouts/MainLayout';
-import GalleryView from '../components/views/GalleryView';
+import MainLayout from '../../layouts/MainLayout';
+import GalleryView from '../../components/views/GalleryView';
 
 const Gallery = (props) => {
   return (

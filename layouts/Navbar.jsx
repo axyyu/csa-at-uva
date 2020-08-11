@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 const Navbar = () => {
   return (
     <aside className='navbar'>
-      <img className='logo' src='./Official-CSA-Square-Logo.png'></img>
+      <img className='logo' src='/Official-CSA-Square-Logo.png'></img>
       <nav>
         <ul className='nav-list'>
           <li>

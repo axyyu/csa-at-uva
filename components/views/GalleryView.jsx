@@ -1,16 +1,19 @@
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import Link from 'next/link';
 
 const GalleryView = (props) => {
   const galleries = props.galleries.map((obj) => {
     return (
-      <div className='gallery'>
-        <img alt='Gallery' src={obj.image}></img>
-        <div className='gallery-info'>
-          <h4>{obj.name}</h4>
-          <p>{moment(obj.date).format('MMMM Do, YYYY')}</p>
-        </div>
-      </div>
+      <Link href={`/gallery/${obj.id}`}>
+        <a className='gallery'>
+          <img alt='Gallery' src={obj.image}></img>
+          <div className='gallery-info'>
+            <h4>{obj.name}</h4>
+            <p>{moment(obj.date).format('MMMM Do, YYYY')}</p>
+          </div>
+        </a>
+      </Link>
     );
   });
 

@@ -2,11 +2,14 @@
   margin-top: 32px;
 
   .gallery {
+    display: block;
     flex: 1;
     position: relative;
     overflow: hidden;
+    color: $black;
 
     img {
+      display: block;
       height: 100%;
       width: 100%;
       object-fit: cover;
