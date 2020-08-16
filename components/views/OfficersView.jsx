@@ -69,7 +69,6 @@ const ExecView = (props) => {
 };
 
 const OfficersView = (props) => {
-  console.log(props);
   const oboard = props.officers.filter((obj) => obj.desc);
   const officerPanels = oboard.map((obj) => (
     <OfficerView key={obj.role} {...obj} />

@@ -13,8 +13,16 @@ const ThisWeekInCsaTimeline = () => {
   if (!data) return <Loader />;
 
   let days = [];
+  let prevWeek = false;
   for (let i = 0; i < 7; i++) {
     let day = moment().day(1 + i);
+    if (i === 0 && day.isAfter(moment())) {
+      prevWeek = true;
+    }
+
+    if (prevWeek) {
+      day = day.subtract(7, 'd');
+    }
     let events = data.items.filter((obj) => {
       let startDate = moment(obj.start.dateTime || obj.start.date);
       return day.isSame(startDate, 'day');
