@@ -14,7 +14,7 @@ const ThisWeekInCsaTimeline = () => {
 
   let days = [];
   for (let i = 0; i < 7; i++) {
-    let day = moment().day(1 + i);
+    let day = moment().day(-6 + i);
     let events = data.items.filter((obj) => {
       let startDate = moment(obj.start.dateTime || obj.start.date);
       return day.isSame(startDate, 'day');
