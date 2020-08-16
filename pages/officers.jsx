@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import MainLayout from '../layouts/MainLayout';
-import OfficersView from '../components/OfficersView';
+import OfficersView from '../components/views/OfficersView';
 
 const Officers = (props) => {
   return (
@@ -10,24 +10,22 @@ const Officers = (props) => {
         <title>CSA Officers</title>
       </Head>
       <h1 className='title'>Our Officers</h1>
-      <p className='subtitle'>List of Officers wow so cool</p>
+      <p className='subtitle'>
+        Here are the officers that organize all the CSA events!
+      </p>
       <OfficersView officers={props.officers}></OfficersView>
     </MainLayout>
   );
 };
 
-export async function getServerSideProps(context) {
-  const proto = context.req.connection.encrypted ? 'https' : 'http';
-  const baseUrl = `${proto}://${context.req.headers.host}/api/officers`;
-  const res = await fetch(baseUrl);
-  let data = null;
-  try {
-    data = await res.json();
-  } catch (err) {
-    data = [];
-  }
+export async function getStaticProps(context) {
+  const res = await fetch(
+    'https://csa-at-uva-cms.uk.r.appspot.com/api/officers'
+  );
+  const officers = await res.json();
+
   return {
-    props: { officers: data }, // will be passed to the page component as props
+    props: { officers },
   };
 }
 

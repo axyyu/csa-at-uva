@@ -6,21 +6,59 @@
 
     .past-year-container {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
 
       background: $xlightgrey;
 
-      .year {
+      margin-bottom: 32px;
+
+      .chinafest {
+        position: relative;
+
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .past-year-info {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: $lightgrey;
 
-        padding: 16px 64px;
+        .year {
+          display: grid;
+          place-items: center;
+          background-color: $orange;
+          color: $white;
 
-        h2 {
-          font-size: 3rem;
-          font-weight: 800;
+          padding: 16px 32px;
+
+          h2 {
+            font-size: 2rem;
+            font-weight: 500;
+          }
+        }
+
+        .year-link {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          box-sizing: border-box;
+
+          padding: 32px;
+
+          transition: all 0.1s ease;
+
+          &:hover {
+            z-index: 1000;
+            transform: scale(1.05);
+            cursor: not-allowed;
+            background: $lightgrey;
+            box-shadow: 2px 2px 16px $lightgrey;
+          }
         }
       }
 
@@ -51,18 +89,6 @@
           .family-name {
             text-align: center;
           }
-        }
-      }
-
-      .year-link {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 32px;
-
-        &:hover {
-          cursor: pointer;
-          background: darken($xlightgrey, 5%);
         }
       }
     }

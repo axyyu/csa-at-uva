@@ -1,0 +1,192 @@
+.this-week {
+  display: flex;
+  align-items: center;
+  margin: 64px 0;
+
+  .this-week-title {
+    text-align: center;
+    margin-right: 16px;
+    h2 {
+      margin: 0;
+    }
+  }
+
+  .vertical {
+    width: 2px;
+    height: 50px;
+    background: $red;
+  }
+
+  .timeline {
+    flex: 1;
+    height: 100%;
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding-left: 32px;
+
+    .timeline-bar {
+      position: absolute;
+      transform: translate(0, -50%);
+      height: 1px;
+      width: 100%;
+      background: $red;
+
+      left: 0;
+      top: 50%;
+    }
+
+    // .top,
+    // .bottom {
+    //   flex: 1;
+    // }
+
+    // .line {
+    //   height: 2px;
+    //   width: 100%;
+    //   background: $red;
+    // }
+
+    .day-container {
+      flex: 1 1 0px;
+
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+
+      &:nth-child(odd) {
+        .day-wrapper {
+          flex-direction: column-reverse;
+
+          .day-icon {
+            transform: translate(50%, -50%);
+            top: 0;
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        .day-wrapper {
+          .day-icon {
+            transform: translate(50%, 50%);
+            bottom: 0;
+          }
+        }
+      }
+
+      .day-wrapper {
+        min-height: 100px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        .day-events {
+          padding: 8px;
+          width: 150%;
+          margin-left: -50%;
+          right: 0;
+
+          box-sizing: border-box;
+          .day-event {
+            text-align: right;
+            font-size: 0.8rem;
+            margin: 4px 0;
+
+            p {
+              display: block;
+              margin: 0;
+            }
+
+            .day-time {
+              font-style: italic;
+            }
+          }
+        }
+
+        .day-icon {
+          position: absolute;
+          right: 0;
+          transform: translate(50%, -50%);
+          border: 2px solid $white;
+
+          color: $red;
+        }
+
+        .day-bar {
+          position: absolute;
+          right: 0;
+
+          height: 100%;
+          width: 1px;
+
+          // transform: translate(0, 0);
+          background: $red;
+        }
+
+        .day-header {
+          position: relative;
+          border: 1px solid $red;
+          padding: 4px 8px;
+          text-align: center;
+
+          font-weight: 500;
+          width: 64px;
+          margin-left: auto;
+
+          .background {
+            position: absolute;
+            background: rgba($orange, 0.3);
+
+            width: 90%;
+            height: 90%;
+
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+          }
+
+          .top-left-corner,
+          .top-right-corner,
+          .bot-left-corner,
+          .bot-right-corner {
+            position: absolute;
+            width: 0;
+            height: 0;
+          }
+
+          .top-left-corner {
+            left: 0;
+            top: 0;
+
+            border-top: 8px solid $orange;
+            border-right: 8px solid transparent;
+          }
+
+          .top-right-corner {
+            right: 0;
+            top: 0;
+
+            border-top: 8px solid $orange;
+            border-left: 8px solid transparent;
+          }
+
+          .bot-left-corner {
+            left: 0;
+            bottom: 0;
+
+            border-bottom: 8px solid $orange;
+            border-right: 8px solid transparent;
+          }
+
+          .bot-right-corner {
+            right: 0;
+            bottom: 0;
+
+            border-bottom: 8px solid $orange;
+            border-left: 8px solid transparent;
+          }
+        }
+      }
+    }
+  }
+}

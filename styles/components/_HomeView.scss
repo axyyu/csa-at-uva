@@ -1,16 +1,21 @@
-.home-img-container {
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-}
-
 .home-view {
+  .home-gallery-wrapper {
+    overflow: hidden;
+    background: $xlightgrey;
+
+    display: block;
+    width: 100%;
+
+    margin-bottom: 32px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
   .highlight {
     color: $red;
-  }
-  h2 {
   }
 
   .mission-statement {
@@ -18,6 +23,18 @@
     font-size: 1.5rem;
     line-height: 2ch;
     margin-bottom: 32px;
+  }
+
+  .home-newsletter {
+    background: $xlightgrey;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    margin: 32px 0;
+
+    .newsletter-info {
+      flex: 1;
+    }
   }
 
   .section-list {

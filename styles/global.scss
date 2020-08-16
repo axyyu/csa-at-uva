@@ -1,20 +1,25 @@
 //Variables
-@import "colors";
-@import "fonts";
+@import 'colors';
+@import 'fonts';
 
 //Components
-@import "layout";
-@import "navbar";
-@import "content";
-@import "button";
+@import 'layout';
+@import 'content';
+@import 'button';
 
-@import "./components/FamilyView";
-@import "./components/EventTimelineView";
-@import "./components/OfficersView";
-@import "./components/GalleryView";
-@import "./components/AlumniView";
-@import "./components/HomeView";
-@import "./components/Newsletter";
+@import './components/Carousel';
+@import './components/navbar';
+@import './components/loader';
+@import './components/Newsletter';
+@import './components/thisWeekInCsa';
+
+@import './components/FamilyView';
+@import './components/EventTimelineView';
+@import './components/OfficersView';
+@import './components/GalleryView';
+@import './components/AlumniView';
+@import './components/HomeView';
+@import './components/PhotosView';
 
 html,
 body {
