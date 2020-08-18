@@ -1,10 +1,15 @@
 import Link from 'next/link';
-import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaYoutube, FaBars } from 'react-icons/fa';
 
 const Navbar = () => {
   return (
     <aside className='navbar'>
       <img className='logo' src='/Official-CSA-Square-Logo.png'></img>
+
+      <div className='bars'>
+        <FaBars />
+      </div>
+
       <nav>
         <ul className='nav-list'>
           <li>

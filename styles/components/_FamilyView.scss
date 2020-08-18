@@ -62,6 +62,10 @@
 
       background: $xlightgrey;
 
+      @include breakpoint('lg') {
+        flex-direction: column;
+      }
+
       .family-info-container {
         flex: 1;
         display: flex;
