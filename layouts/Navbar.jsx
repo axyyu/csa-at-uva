@@ -22,7 +22,11 @@ class Navbar extends React.Component {
     const display = this.state.show ? 'block' : 'none';
     return (
       <aside className='navbar'>
-        <img className='logo' src='/Official-CSA-Square-Logo.png'></img>
+        <Link href='/'>
+          <a>
+            <img className='logo' src='/Official-CSA-Square-Logo.png'></img>
+          </a>
+        </Link>
 
         <div className='bars' onClick={this.toggleNav}>
           {this.state.show ? <FaTimes /> : <FaBars />}
@@ -64,10 +68,21 @@ class Navbar extends React.Component {
         </nav>
         <div className={`social-container ${display}`}>
           <div className='social-links'>
-            <FaFacebook />
-            <FaInstagram />
-            <FaYoutube />
+            <a href='https://www.facebook.com/csa.uva' target='_blank'>
+              <FaFacebook />
+            </a>
+            <a href='https://www.instagram.com/csaatuva/?hl=en' target='_blank'>
+              <FaInstagram />
+            </a>
+            <a href='https://www.youtube.com/user/TheCSAatUVA' target='_blank'>
+              <FaYoutube />
+            </a>
           </div>
+        </div>
+        <div className={`nav-newsletter ${display}`}>
+          <button onClick={() => this.props.openNewsletter()}>
+            Join Our Newsletter
+          </button>
         </div>
       </aside>
     );
