@@ -8,6 +8,12 @@
     overflow: hidden;
     color: $black;
 
+    .gallery-info {
+      h4 {
+        margin: 0;
+      }
+    }
+
     img {
       display: block;
       height: 100%;
@@ -23,6 +29,10 @@
         transform: scale(1.05);
       }
     }
+
+    @include breakpoint('sm') {
+      width: 100%;
+    }
   }
   .gallery-showcase {
     display: grid;
@@ -30,6 +40,13 @@
     grid-column-gap: 32px;
 
     margin-bottom: 32px;
+
+    @include breakpoint('mo') {
+      grid-template-columns: 1fr;
+      grid-column-gap: 16px;
+      grid-row-gap: 16px;
+      margin-bottom: 16px;
+    }
 
     .gallery-spotlight {
       .gallery {
@@ -41,7 +58,7 @@
           bottom: 0;
           width: 100%;
           padding: 16px;
-          background: rgba($xlightgrey, 0.5);
+          background: rgba($xlightgrey, 0.7);
         }
       }
     }
@@ -58,7 +75,7 @@
           bottom: 0;
           width: 100%;
           padding: 16px;
-          background: rgba($xlightgrey, 0.5);
+          background: rgba($xlightgrey, 0.7);
         }
       }
     }
@@ -67,6 +84,17 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 32px;
+    grid-row-gap: 32px;
+
+    @include breakpoint('sm') {
+      grid-column-gap: 16px;
+      grid-row-gap: 16px;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include breakpoint('mo') {
+      grid-template-columns: 1fr;
+    }
 
     .gallery {
       .gallery-info {
@@ -83,7 +111,7 @@
         width: 100%;
         box-sizing: border-box;
         padding: 16px;
-        background: rgba($xlightgrey, 0.9);
+        background: rgba($xlightgrey, 0.7);
       }
 
       &:hover {

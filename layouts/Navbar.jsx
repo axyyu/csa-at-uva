@@ -52,7 +52,7 @@ class Navbar extends React.Component {
             </li>
             <li>
               <Link href='/alumni'>
-                <a>Past Years</a>
+                <a>Alumni</a>
               </Link>
             </li>
             <li>

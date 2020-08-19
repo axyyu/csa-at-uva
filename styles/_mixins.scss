@@ -1,3 +1,4 @@
+$mo: 550px; //Mobile
 $xs: 767px; //Extra small
 $sm: 768px; //Small
 $md: 992px; //Medium
@@ -23,6 +24,10 @@ $xl: 1400px; //Extra large
     }
   } @else if $class == xl {
     @media (max-width: $xl) {
+      @content;
+    }
+  } @else if $class == mo {
+    @media (max-width: $mo) {
       @content;
     }
   } @else {

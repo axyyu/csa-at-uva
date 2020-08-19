@@ -15,4 +15,8 @@
   @include breakpoint('md') {
     height: auto;
   }
+
+  @include breakpoint('sm') {
+    padding: 32px;
+  }
 }

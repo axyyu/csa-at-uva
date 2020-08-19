@@ -30,3 +30,18 @@
     }
   }
 }
+
+footer {
+  display: none;
+
+  background: $xlightgrey;
+  padding: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  text-align: center;
+
+  @include breakpoint('sm') {
+    display: flex;
+  }
+}
