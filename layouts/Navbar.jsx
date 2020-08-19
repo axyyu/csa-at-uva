@@ -22,7 +22,11 @@ class Navbar extends React.Component {
     const display = this.state.show ? 'block' : 'none';
     return (
       <aside className='navbar'>
-        <img className='logo' src='/Official-CSA-Square-Logo.png'></img>
+        <Link href='/'>
+          <a>
+            <img className='logo' src='/Official-CSA-Square-Logo.png'></img>
+          </a>
+        </Link>
 
         <div className='bars' onClick={this.toggleNav}>
           {this.state.show ? <FaTimes /> : <FaBars />}
