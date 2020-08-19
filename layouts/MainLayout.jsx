@@ -3,8 +3,6 @@ import Head from 'next/head';
 
 import Navbar from './Navbar';
 import Newsletter from '../components/Newsletter';
-import Footer from './Footer';
-
 class MainLayout extends Component {
   constructor(props) {
     super(props);
@@ -34,11 +32,10 @@ class MainLayout extends Component {
           ></link>
         </Head>
         <div className='layout'>
-          <Navbar></Navbar>
+          <Navbar openNewsletter={this.openNewsletter.bind(this)}></Navbar>
           <div className='content-wrapper'>
             <div className='content'>{elements}</div>
           </div>
-          <Footer openNewsletter={this.openNewsletter.bind(this)} />
         </div>
 
         {this.state.newsletter && (

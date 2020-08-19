@@ -79,6 +79,11 @@ class Navbar extends React.Component {
             </a>
           </div>
         </div>
+        <div className={`nav-newsletter ${display}`}>
+          <button onClick={() => this.props.openNewsletter()}>
+            Join Our Newsletter
+          </button>
+        </div>
       </aside>
     );
   }

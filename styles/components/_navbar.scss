@@ -29,6 +29,25 @@
     min-height: 100px;
   }
 
+  .nav-newsletter {
+    display: none;
+    margin: auto;
+    padding: 16px;
+
+    button {
+      background: $xlightgrey;
+      color: $red;
+    }
+
+    &.block {
+      display: block;
+    }
+
+    &.none {
+      display: none;
+    }
+  }
+
   .bars {
     display: none;
     margin-right: 16px;
