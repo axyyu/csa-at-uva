@@ -3,6 +3,10 @@
   align-items: center;
   margin: 64px 0;
 
+  @include breakpoint('lg') {
+    display: none;
+  }
+
   .this-week-title {
     text-align: center;
     margin-right: 16px;

@@ -4,6 +4,10 @@
     flex-wrap: wrap;
     margin: 32px 0;
 
+    @include breakpoint('sm') {
+      display: none;
+    }
+
     .family-button {
       flex: 1;
       overflow: hidden;
@@ -53,6 +57,10 @@
     display: block;
     width: 100%;
 
+    @include breakpoint('sm') {
+      margin-top: 32px;
+    }
+
     .family-container {
       display: flex;
       flex-wrap: wrap;
@@ -61,6 +69,10 @@
       height: 100%;
 
       background: $xlightgrey;
+
+      @include breakpoint('lg') {
+        flex-direction: column;
+      }
 
       .family-info-container {
         flex: 1;

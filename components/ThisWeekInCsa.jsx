@@ -34,8 +34,6 @@ const ThisWeekInCsaTimeline = () => {
     });
   }
 
-  console.log(days);
-
   const dayPanels = days.map((obj, index) => {
     const spacer = <div className='day-spacer'></div>;
 

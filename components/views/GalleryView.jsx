@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import Link from 'next/link';
 
 const GalleryView = (props) => {
@@ -10,7 +9,6 @@ const GalleryView = (props) => {
           <img alt='Gallery' src={obj.image}></img>
           <div className='gallery-info'>
             <h4>{obj.name}</h4>
-            <p>{moment(obj.date).format('MMMM Do, YYYY')}</p>
           </div>
         </a>
       </Link>
@@ -21,7 +19,7 @@ const GalleryView = (props) => {
   const featuredOne = galleries.length > 1 ? galleries[1] : null;
   const featuredTwo = galleries.length > 2 ? galleries[2] : null;
   const galleryList = galleries.filter((obj, index) => {
-    return index > 3;
+    return index > 2;
   });
 
   const galleryLayout = (

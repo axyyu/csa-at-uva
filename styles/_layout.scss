@@ -1,8 +1,16 @@
 .layout {
   min-height: 100vh;
+  max-height: 100vh;
 
   display: grid;
   grid-template-columns: auto 1fr;
+
+  overflow: auto;
+
+  @include breakpoint('md') {
+    grid-template-columns: auto;
+    grid-template-rows: auto 1fr;
+  }
 
   .desc {
     font-size: 1.2rem;
@@ -20,5 +28,20 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+footer {
+  display: none;
+
+  background: $xlightgrey;
+  padding: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  text-align: center;
+
+  @include breakpoint('sm') {
+    display: flex;
   }
 }

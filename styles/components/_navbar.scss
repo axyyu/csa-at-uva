@@ -1,5 +1,4 @@
 .navbar {
-  position: sticky;
   width: 300px;
 
   max-height: 100vh;
@@ -12,19 +11,107 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
 
+  position: relative;
+
+  @include breakpoint('md') {
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto;
+
+    width: 100%;
+  }
+
+  @include breakpoint('sm') {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-height: fit-content;
+    flex-wrap: wrap;
+  }
+
+  .bars {
+    display: none;
+    margin-right: 16px;
+
+    @include breakpoint('sm') {
+      display: flex;
+      color: $white;
+      height: 100%;
+      align-items: center;
+      font-size: 1.2rem;
+    }
+
+    cursor: pointer;
+  }
+
   .logo {
     max-width: 100%;
+    margin-right: 32px;
+
+    @include breakpoint('md') {
+      height: 64px;
+      width: 64px;
+      max-width: 64px;
+    }
   }
 
   nav {
     padding: 0 48px;
 
+    @include breakpoint('sm') {
+      &.block {
+        display: block;
+      }
+
+      &.none {
+        display: none;
+      }
+
+      width: 100%;
+      min-width: 90vw;
+    }
+
+    @include breakpoint('md') {
+      padding: 0;
+    }
+
     .nav-list {
       padding: 0;
       list-style: none;
 
+      @include breakpoint('md') {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 32px;
+        margin: 0;
+        height: 100%;
+      }
+
+      @include breakpoint('sm') {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        width: 100%;
+
+        padding: 0;
+
+        margin: 32px 0;
+      }
+
       li {
         margin: 32px 0;
+
+        @include breakpoint('md') {
+          margin: 0 16px;
+        }
+
+        @include breakpoint('sm') {
+          margin: 8px 0;
+          width: 100%;
+          padding-left: 16px;
+        }
+
         a {
           display: inline-block;
           width: 100%;
@@ -34,6 +121,10 @@
 
           &:hover {
             text-decoration: underline;
+          }
+
+          @include breakpoint('md') {
+            font-size: 1.2rem;
           }
         }
       }
@@ -58,6 +149,31 @@
           transform: scale(1.1);
           text-shadow: 2px 2px 16px $xlightgrey;
         }
+
+        @include breakpoint('sm') {
+          margin: 0 16px;
+        }
+      }
+
+      @include breakpoint('sm') {
+        justify-content: center;
+      }
+    }
+
+    @include breakpoint('md') {
+      display: none;
+    }
+
+    @include breakpoint('sm') {
+      padding: 16px 16px;
+      width: 100%;
+
+      &.block {
+        display: block;
+      }
+
+      &.none {
+        display: none;
       }
     }
   }

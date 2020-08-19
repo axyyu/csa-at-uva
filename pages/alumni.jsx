@@ -9,7 +9,7 @@ const Alumni = (props) => {
       <Head>
         <title>CSA Alumni</title>
       </Head>
-      <h1 className='title'>Past Years</h1>
+      <h1 className='title'>Alumni</h1>
       <p className='subtitle'>
         Feeling nostalgic? View CSA's past years, including officers, families,
         and more to relive those memories.

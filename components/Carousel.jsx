@@ -33,7 +33,7 @@ class CsaCarousel extends React.Component {
         }
         showStatus={false}
         infiniteLoop={true}
-        autoPlay={true}
+        autoPlay={false}
         useKeyboardArrows={true}
         stopOnHover={true}
         swipeable={true}

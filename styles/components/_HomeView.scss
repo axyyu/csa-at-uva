@@ -13,6 +13,12 @@
       width: 100%;
       object-fit: cover;
     }
+
+    @include breakpoint('sm') {
+      width: 100vw;
+      margin: -32px;
+      margin-bottom: 32px;
+    }
   }
   .highlight {
     color: $red;
@@ -23,6 +29,10 @@
     font-size: 1.5rem;
     line-height: 2ch;
     margin-bottom: 32px;
+
+    @include breakpoint('sm') {
+      font-size: 1.2rem;
+    }
   }
 
   .home-newsletter {
@@ -34,6 +44,11 @@
 
     .newsletter-info {
       flex: 1;
+      margin-right: 16px;
+    }
+
+    @include breakpoint('sm') {
+      display: none;
     }
   }
 
@@ -59,6 +74,10 @@
 
       a {
         margin: 0 auto;
+      }
+
+      @include breakpoint('sm') {
+        margin: 8px 0;
       }
     }
   }

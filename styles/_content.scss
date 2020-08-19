@@ -11,4 +11,12 @@
   h1 {
     font-size: 3rem;
   }
+
+  @include breakpoint('md') {
+    height: auto;
+  }
+
+  @include breakpoint('sm') {
+    padding: 32px;
+  }
 }
