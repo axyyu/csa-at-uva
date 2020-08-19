@@ -109,6 +109,9 @@ const ExecList = (props) => {
 
 const OfficersView = (props) => {
   const oboard = props.officers.filter((obj) => obj.desc);
+  oboard.sort((a, b) => {
+    return ('' + a.role).localeCompare(b.role);
+  });
   const officerPanels = oboard.map((obj) => (
     <OfficerView key={obj.role} {...obj} />
   ));
