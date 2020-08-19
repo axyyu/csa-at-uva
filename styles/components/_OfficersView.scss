@@ -12,6 +12,10 @@
       grid-template-columns: 1fr 1fr 1fr;
     }
 
+    @include breakpoint('mo') {
+      grid-template-columns: 1fr 1fr;
+    }
+
     .officer-role-list {
       margin-right: 32px;
     }
@@ -40,9 +44,18 @@
 
     background: $xlightgrey;
 
+    max-height: 80vh;
+
     &.exec-officer-container {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
+
+      max-height: 80vh;
+
+      @include breakpoint('sm') {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 50% 50%;
+      }
     }
 
     @include breakpoint('lg') {
@@ -50,18 +63,12 @@
     }
 
     .exec-officer {
+      position: relative;
       flex: 1;
 
       .exec-img-container {
-        max-height: 50vh;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-
-      .officer-img-container {
+        width: 100%;
+        height: 100%;
         img {
           width: 100%;
           height: 100%;
@@ -70,7 +77,21 @@
       }
 
       .exec-info {
+        position: absolute;
+        background: rgba($xlightgrey, 0.9);
+        bottom: 0;
         padding: 32px 8px;
+        width: 100%;
+
+        @include breakpoint('sm') {
+          padding: 8px;
+          .role {
+            font-size: 0.8rem;
+          }
+          .name {
+            font-size: 1rem;
+          }
+        }
       }
     }
 
