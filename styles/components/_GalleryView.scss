@@ -32,6 +32,14 @@
 
     @include breakpoint('sm') {
       width: 100%;
+
+      .gallery-info {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 16px;
+        background: rgba($xlightgrey, 0.7);
+      }
     }
   }
   .gallery-showcase {
