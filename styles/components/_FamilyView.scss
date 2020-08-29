@@ -36,6 +36,14 @@
         margin: 0;
       }
 
+      @include breakpoint('xl') {
+        justify-content: center;
+
+        h4 {
+          display: none;
+        }
+      }
+
       transition: all 0.1s ease;
 
       &:hover {
