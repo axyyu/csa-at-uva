@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
-import MainLayout from '../layouts/MainLayout';
-import AlumniView from '../components/views/AlumniView';
+import MainLayout from '../../layouts/MainLayout';
+import AlumniView from '../../components/views/AlumniView';
 
 const Alumni = (props) => {
   return (
