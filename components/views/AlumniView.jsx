@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { FaArrowRight } from 'react-icons/fa';
+import Link from 'next/link';
 
 const AlumniView = (props) => {
   const pastYearContainers = props.pastYears
@@ -17,10 +18,14 @@ const AlumniView = (props) => {
                 {obj.startYear} - {obj.endYear}
               </h2>
             </div>
-            <div className='year-link'>
-              <h4>Summary</h4>
-              <FaArrowRight />
-            </div>
+            <Link href={`/alumni/${obj.id}`}>
+              <a href={`/alumni/${obj.id}`}>
+                <div className='year-link'>
+                  <h4>Summary</h4>
+                  <FaArrowRight />
+                </div>
+              </a>
+            </Link>
           </div>
         </div>
       );
