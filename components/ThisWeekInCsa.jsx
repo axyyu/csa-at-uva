@@ -46,7 +46,7 @@ const ThisWeekInCsaTimeline = () => {
         ? event.location.substring(0, event.location.indexOf(','))
         : null;
       events.push(
-        <div className='day-event'>
+        <div key={event.summary} className='day-event'>
           <p>{event.summary}</p>
           <p className='day-time'>
             {location} @ {startDate.format('hA')}
@@ -67,7 +67,7 @@ const ThisWeekInCsaTimeline = () => {
     }
 
     return (
-      <div className='day-container'>
+      <div className='day-container' key={index}>
         {index % 2 === 1 && spacer}
         <div className='day-wrapper'>
           <div className='day-header'>
