@@ -57,7 +57,7 @@ const HomeView = (props) => {
         <section className='officers'>
           <h2>Talk to Our Officers</h2>
 
-          <p>Our officers are very cool</p>
+          <p>Our officers are very cool and very nice.</p>
 
           <Link href='/officers'>
             <a>
