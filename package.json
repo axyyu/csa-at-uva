@@ -12,7 +12,7 @@
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
-    "moment": "^2.28.0",
+    "moment": "^2.29.2",
     "next": "9.4.4",
     "next-optimized-images": "^2.6.2",
     "react": "16.13.1",
