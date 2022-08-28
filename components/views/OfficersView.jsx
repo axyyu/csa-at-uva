@@ -49,20 +49,20 @@ const ExecView = (props) => {
       </div>
       <div className='exec-officer'>
         <div className='exec-img-container'>
-          <img src={treasurer.image}></img>
-        </div>
-        <div className='exec-info'>
-          <h2 className='role'>{treasurer.role}</h2>
-          <h2 className='name'>{treasurer.name}</h2>
-        </div>
-      </div>
-      <div className='exec-officer'>
-        <div className='exec-img-container'>
           <img src={secretary.image}></img>
         </div>
         <div className='exec-info'>
           <h2 className='role'>{secretary.role}</h2>
           <h2 className='name'>{secretary.name}</h2>
+        </div>
+      </div>
+      <div className='exec-officer'>
+        <div className='exec-img-container'>
+          <img src={treasurer.image}></img>
+        </div>
+        <div className='exec-info'>
+          <h2 className='role'>{treasurer.role}</h2>
+          <h2 className='name'>{treasurer.name}</h2>
         </div>
       </div>
     </div>
@@ -92,15 +92,15 @@ const ExecList = (props) => {
         </ul>
       </div>
       <div className='officer-role-list'>
-        <h4>{treasurer.role}</h4>
-        <ul>
-          <li>{treasurer.name}</li>
-        </ul>
-      </div>
-      <div className='officer-role-list'>
         <h4>{secretary.role}</h4>
         <ul>
           <li>{secretary.name}</li>
+        </ul>
+      </div>
+      <div className='officer-role-list'>
+        <h4>{treasurer.role}</h4>
+        <ul>
+          <li>{treasurer.name}</li>
         </ul>
       </div>
     </>
