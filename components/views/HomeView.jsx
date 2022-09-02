@@ -26,6 +26,15 @@ const HomeView = (props) => {
         culture.
       </p>
 
+    
+      <button onClick={() => window.open("https://www.tinyurl.com/oldcsa")}>
+          Returning Members Form
+        </button>
+        &nbsp;&nbsp;&nbsp;
+        <button onClick={() => window.open("https://www.tinyurl.com/csanewmember")}>
+          New Members Form
+        </button>
+
       <section className='home-newsletter'>
         <div className='newsletter-info'>
           <h2>Join Our Newsletter</h2>
@@ -34,7 +43,7 @@ const HomeView = (props) => {
             activities.
           </p>
         </div>
-
+        
         <button onClick={() => props.openNewsletter()}>
           Join Our Newsletter
         </button>

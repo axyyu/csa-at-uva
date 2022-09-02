@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 import Navbar from './Navbar';
 import Newsletter from '../components/Newsletter';
+
 class MainLayout extends Component {
   constructor(props) {
     super(props);
