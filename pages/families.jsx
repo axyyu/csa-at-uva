@@ -11,7 +11,7 @@ const Families = (props) => {
       </Head>
       <h1 className='title'>Meet Our Families</h1>
       <p className='subtitle'>
-        Every year, all CSA members are assigned to different families. Families
+        Every year, all CSA members are sorted into different families. Families
         play a major role in building the CSA community.
       </p>
       <FamilyView families={props.families}></FamilyView>
